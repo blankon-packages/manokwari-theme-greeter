@@ -1,3 +1,13 @@
+manokwari-theme-greeter (1.1) suroboyo; urgency=low
+
+  * added Clock login desktop
+  * added script:
+    - mankowari-theme-greeter/js/time.js
+    - mankowari-theme-greeter/js/moment.min.js
+    - mankowari-theme-greeter/img/bg.jpg (temporary interim)
+
+ -- mijortsa <azis.astrojim@surabaya.di.blankon.in>  Tue, 30 Jul 2013 18:55:14 +0700
+
 manokwari-theme-greeter (1.0) suroboyo; urgency=low
 
   * Upload to Suroboyo.
