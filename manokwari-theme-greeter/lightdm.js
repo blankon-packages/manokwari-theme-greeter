@@ -71,15 +71,15 @@ function _login ()
 
 function LightDMClass ()
 {
-    this.users = [new LightDMUser("zac", "Zac Efron", "http://m.popstar.com/Celebrities/A/Zac_Efron.jpg", false),
-                  new LightDMUser("bob", "Bob", "http://people.ubuntu.com/~robert-ancell/lightdm/coffee.jpg", true),
-				  new LightDMUser("alice", "Alice", "", true),
-                  new LightDMUser("carol", "A-REALLY-LONG-NAME", "", false)];
+    this.users = [new LightDMUser("kholiq", "Kholiq", "./img/user.png", true),
+				  new LightDMUser("bagio", "Bagio", "./img/user.png", true),
+				  new LightDMUser("kirun", "Kirun", "./img/user.png", true),];
     this.num_users = this.users.length;
-    this.sessions = [new LightDMSession("gnome", "GNOME", "This session logs you into GNOME"),
-                     new LightDMSession("kde", "KDE", "This session logs you into KDE")];
-    this.default_session = "gnome";
-    this.timed_login_user = "alice";
+    this.sessions = [new LightDMSession("gnome", "Gnome", "This session logs you into Gnome"),
+                     new LightDMSession("kde", "Kde", "This session logs you into Kde"),
+                     new LightDMSession("manokwari", "Manokwari", "This session logs you into Manokwari")];
+    this.default_session = "manokwari";
+    this.timed_login_user = "bagio";
     this.timed_login_delay = 5;
     this.is_authenticated = false;
     this.can_suspend = true;

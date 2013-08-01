@@ -1,3 +1,10 @@
+manokwari-theme-greeter (1.2) suroboyo; urgency=low
+
+  * resize blankon.png
+  * changes panel image to color code
+
+ -- mijortsa <azis.astrojim@surabaya.di.blankon.in>  Thu, 01 Aug 2013 16:51:18 +0700
+
 manokwari-theme-greeter (1.1) suroboyo; urgency=low
 
   * added Clock login desktop
