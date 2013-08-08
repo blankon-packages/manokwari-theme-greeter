@@ -10,5 +10,5 @@ Package: manokwari-theme-greeter
 Architecture: all
 Depends: ${misc:Depends}, lightdm-webkit-greeter
 Provides: lightdm-theme
-Description: Pantheon login screen
+Description: BlankOn login screen
  Manokwari theme for LightDM, developed by BlankOn project.

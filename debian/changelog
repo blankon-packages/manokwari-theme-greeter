@@ -1,3 +1,9 @@
+manokwari-theme-greeter (1.5) suroboyo; urgency=low
+
+  * Update debian/control typo 
+
+ -- Rahman Yusri Aftian <aftian@di.blankon.in>  Thu, 08 Aug 2013 12:34:41 +0700
+
 manokwari-theme-greeter (1.4) suroboyo; urgency=low
 
   * added border-radius panel session
