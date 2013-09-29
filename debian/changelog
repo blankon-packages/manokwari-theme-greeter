@@ -1,3 +1,9 @@
+manokwari-theme-greeter (1.6) suroboyo; urgency=low
+
+  * Added new theme greeter.
+
+ -- Aris Febrianto <ariesfebrianto@gmail.com>  Mon, 30 Sep 2013 02:44:05 +0700
+
 manokwari-theme-greeter (1.5) suroboyo; urgency=low
 
   * Update debian/control typo 
