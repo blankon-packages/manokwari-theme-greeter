@@ -1,3 +1,10 @@
+manokwari-theme-greeter (1.9) suroboyo; urgency=low
+
+  * Update index.html and style.css.
+  * 
+
+ -- Syai Mif <syai.unipdu@gmail.com>  Thu, 24 Oct 2013 17:05:15 +0700
+
 manokwari-theme-greeter (1.8) suroboyo; urgency=low
 
   * Add  wallpaper and update css.
