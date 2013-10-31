@@ -29,7 +29,7 @@ function buildUI() {
 	if(lightdm.can_restart)
 		shutdownmenu += '<li><a href="#" onclick="lightdm.restart()">Restart</a></li>';
 	if(lightdm.can_shutdown)
-		shutdownmenu += '<li><a href="#" onclick="lightdm.shutdown()">Shutdown</a></li>';
+		shutdownmenu += '<li><a href="#" onclock="lightdm.shutdown()">Shutdown</a></li>';
 	shutdownmenu += '<div class="down-arrow-bottom"></div>';
 	$('#shutdown-menu').html(shutdownmenu);
 	$('#shutdown-container').click(function() {

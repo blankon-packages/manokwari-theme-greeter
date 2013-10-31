@@ -1,3 +1,11 @@
+manokwari-theme-greeter (2.0) suroboyo; urgency=low
+
+  * move and fix strech bg.jpg from index.html to style.css
+  * time.js 
+    - drop and fix setupEvents
+
+ -- mijortsa <azis.astrojim@surabaya.di.blankon.in>  Thu, 31 Oct 2013 23:26:25 +0700
+
 manokwari-theme-greeter (1.9) suroboyo; urgency=low
 
   * Update index.html and style.css.

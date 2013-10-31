@@ -67,5 +67,5 @@ $(document).ready(function() {
   appletsArea = new AppletsArea();
   clock = new Clock();
 
-  setupEvents();
+  //setupEvents();
 });

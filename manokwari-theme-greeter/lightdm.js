@@ -75,17 +75,17 @@ function LightDMClass ()
 				  new LightDMUser("bagio", "Bagio", "./img/user.png", true),
 				  new LightDMUser("kirun", "Kirun", "./img/user.png", true),];
     this.num_users = this.users.length;
-    this.sessions = [new LightDMSession("gnome", "Gnome", "This session logs you into Gnome"),
-                     new LightDMSession("kde", "Kde", "This session logs you into Kde"),
-                     new LightDMSession("manokwari", "Manokwari", "This session logs you into Manokwari")];
-    this.default_session = "manokwari";
+    this.sessions = [new LightDMSession("blankon", "BlankOn", "This session logs you into Manokwari"),
+                     new LightDMSession("gnome", "Gnome", "This session logs you into Gnome"),
+                     new LightDMSession("kde", "Kde", "This session logs you into Kde")];
+    this.default_session = "blankon";
     this.timed_login_user = "bagio";
     this.timed_login_delay = 5;
     this.is_authenticated = false;
     this.can_suspend = true;
-    this.can_hibernate = false;
+    this.can_hibernate = true;
     this.can_restart = true;
-    this.can_shutdown = false;
+    this.can_shutdown = true;
     this.cancel_timed_login = _cancel_timed_login;
     this.start_authentication = _start_authentication;
     this.provide_secret = _provide_secret;
@@ -100,6 +100,6 @@ function LightDMClass ()
 }
 
 if(typeof lightdm == 'undefined') {
-	alert("Lightdm not running!");
+	//alert("Lightdm not running!");
 	lightdm = new LightDMClass();
 }

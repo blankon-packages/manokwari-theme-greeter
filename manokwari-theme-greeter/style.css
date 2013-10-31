@@ -1,23 +1,27 @@
-body {
-	/*background: -webkit-linear-gradient(#1C75CD 30%, #E6E6FA 60%, #1582EC);*/
+body, 
+.stretch {
+	background: url(./img/bg.jpg) no-repeat center center fixed;
 	overflow: hidden;
 	font-family: 'Droid Sans';
 	padding: 0;
 	margin: 0;
 	-webkit-user-select: none;
 	-webkit-touch-callout: none;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 
-#background {
+/*#background {
 	background-color: #093E83;
-	/* background-image: linear-gradient(rgba(255,255,255,.2) 1px, transparent 1px),
+	background-image: linear-gradient(rgba(255,255,255,.2) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,.2) 1px, transparent 1px),
         linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px);
         background-size:100px 100px, 100px 100px, 20px 20px, 20px 20px;
         background-position:-2px -2px, -2px -2px, -1px -1px, -1px -1px;
-	background-size:100px 100px, 100px 100px, 20px 20px, 20px 20px;
-	background-position:-2px -2px, -2px -2px, -1px -1px, -1px -1px;*/
+	
 	width: 100%; 
 	height: 100%; 
 	left: 0px; 
@@ -28,7 +32,7 @@ body {
 .stretch {
     width:100%;
     height:100%;
-}
+}*/
 
 #pseudo-body {
 	background-image: -webkit-radial-gradient(50% 42%, ellipse farthest-side, rgba(240, 240, 240, 0.0), rgba(240, 240, 240, 0.0) 1%);
@@ -63,7 +67,7 @@ div#panel {
 	background-color: #000;
 	z-index: 20;
 	/*padding: 0px 0px 40px 10px;*/
-	box-shadow: 2px 2px 20px black; 	
+	box-shadow: 0px 0px 10px black; 	
 }
 
 div#panel div.menu {
@@ -94,8 +98,8 @@ ul.down-arrow:before {
 
 ul.down-arrow {
 	z-index: 22;
-	background: #EEE;
-	width: 132px;
+	background: #eee;
+	width: 144px;
 	display: none;
 	padding: 2px 0 2px 0;
 	margin: 0px;
@@ -115,8 +119,8 @@ ul.down-arrow {
 ul.down-arrow li {
 	background: transparent;
 	padding: 0 2px 0 2px;
-	width: 128px;
-	height: 24px;
+	width: 140px;
+	height: 26px;
 	line-height: 0;
 	border-color: transparent;
 	border-style: solid;
@@ -134,21 +138,23 @@ ul.down-arrow a {
 	color: #1a1a1a;
 	/*background: rgba(0,0,0,0.7);*/
 	display: inline-block;
-	height: 24px;
-	width: 128px;
+	height: 26px;
+	width: 140px;
 	padding: 0px;
 	line-height: 26px;
 	text-decoration: none;
-	font-size: 13px;
-	font-weight: bold;
+	font-size: 14px;
+	/*font-weight: bold;*/
 	text-align: center;
 	text-shadow: 0 1px 1px #EEE;
 }
 
 ul.down-arrow a:hover{
-	background: #ccc;
+	background: #2F7ADF;
 	text-shadow: 0 1px 1px #eee;
-	color: #1a1a1a;
+	color: #fff;
+	text-shadow: 0 1px 1px #111;
+	font-weight: bold;
 	border-color: #000;
 	border-style: solid;
 	border-width: 0px;
@@ -167,22 +173,23 @@ ul.down-arrow a:hover{
 }*/
 
 li.session-selected a {
-	text-shadow: 0 1px 1px #222;
+	/*text-shadow: 0 1px 1px #eee;*/
 	border-color: #000;
 	border-style: solid;
 	border-width: 0px;
 	border-radius: 1px;
-	background:   #667BA8;
-	color: #fff;
+	/*background: #1A1A1A;*/
+	font-weight: bold;
+	color: #1a1a1a;
 }
 
 li.session-selected a:hover {
-	text-shadow: 0 1px 1px #222;
+	/*text-shadow: 0 1px 1px #eee;*/
 	border-color: #000;
 	border-style: solid;
 	border-width: 0px;
 	border-radius: 1px;
-	background: #667BA8;
+	background: #2F7ADF;
 	color: #fff;
 }
 div#center {
@@ -321,9 +328,9 @@ div.user-selected > div.user-name-container.no-image {
 div.user > div.user-name-container > div {
 	vertical-align: middle;
 	padding: 4px;
-	font-size: 16px;
+	font-size: 18px;
 	font-family: Droid Sans;
-	font-weight: bold;
+	/*font-weight: bold;*/
 	color: #eee;
 	line-height: 100px;
 	white-space: nowrap !important;
@@ -337,7 +344,7 @@ div.user > div.user-name-container > div {
 
 .input-r {
 	padding-right: 0px;
-	background: rgba(240, 240, 240, 0.0); /*url("./img/input.png") top right no-repeat;*/
+	background: rgba(240, 240, 240, 0.0);
 	height: 28px;
 	margin: 0 0 9px;
 	display: inline-block;
@@ -351,11 +358,11 @@ div.user > div.user-name-container > div {
 }
 .input-l {
 	padding-left: 5px;
-	background: rgba(240, 240, 240, 0.0); /*url("./img/input.png") no-repeat 0 -26px;*/
+	background: rgba(240, 240, 240, 0.0);
 	height: 28px;
 }
 .input-c {
-	background: rgba(240, 240, 240, 0.0); /*url("./img/input.png") 0 -52px;*/
+	background: rgba(240, 240, 240, 0.0);
 	height: 28px;
 	line-height: 24px;
 } 
@@ -363,7 +370,7 @@ div.user > div.user-name-container > div {
 .input-c input{
 	background: #eee;
 	border-width: 2px;
-	border-radius: 5px;
+	border-radius: 4px;
 	border-color: #222;
 	border-style: solid;
 	height: 28px;
