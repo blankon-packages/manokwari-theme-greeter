@@ -1,3 +1,9 @@
+manokwari-theme-greeter (2.1) suroboyo; urgency=low
+
+  * fix shutdown
+
+ -- mijortsa <azis.astrojim@surabaya.di.blankon.in>  Fri, 08 Nov 2013 03:03:16 +0700
+
 manokwari-theme-greeter (2.0) suroboyo; urgency=low
 
   * move and fix strech bg.jpg from index.html to style.css

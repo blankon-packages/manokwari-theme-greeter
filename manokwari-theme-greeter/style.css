@@ -13,27 +13,6 @@ body,
 	background-size: cover;
 }
 
-/*#background {
-	background-color: #093E83;
-	background-image: linear-gradient(rgba(255,255,255,.2) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.2) 1px, transparent 1px),
-        linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px);
-        background-size:100px 100px, 100px 100px, 20px 20px, 20px 20px;
-        background-position:-2px -2px, -2px -2px, -1px -1px, -1px -1px;
-	
-	width: 100%; 
-	height: 100%; 
-	left: 0px; 
-	top: 0px; 	
-	position: fixed;
-	z-index: -1;
-}
-.stretch {
-    width:100%;
-    height:100%;
-}*/
-
 #pseudo-body {
 	background-image: -webkit-radial-gradient(50% 42%, ellipse farthest-side, rgba(240, 240, 240, 0.0), rgba(240, 240, 240, 0.0) 1%);
 	-webkit-background-size: 100%;
@@ -47,15 +26,6 @@ body,
 	z-index: 1;
 	overflow: hidden;
 }
-
-/*#bg-top {
-	height: 100%;
-	background: url(./img/bg.png);
-	width: 100%;
-	position: absolute;
-	z-index: 2;
-}*/
-
 
 div#panel {
 	position: absolute;
@@ -71,7 +41,7 @@ div#panel {
 }
 
 div#panel div.menu {
-	top: 73%;
+	top: 70%;
 	width: 40px;
 	padding: 5px 0px 5px 15px;
 	height: 50px;
@@ -91,15 +61,28 @@ ul.down-arrow:before {
   top:6px;
   border-width: 10px;
   border-style:solid;
-  border-color:transparent #EEE transparent transparent;
-  z-index: 21;
+  border-color:transparent #eee transparent transparent;
+  z-index: 22;
+}
+
+ul.down-arrow li:before {
+  content:"";
+  width:0px;
+  height:0px;
+  position:absolute;
+  left: -21px;
+  top:6px;
+  border-width: 10px;
+  border-style:solid;
+  border-color:transparent #111 transparent transparent;
+  z-index: 15;
 }
 /***** CSS TRiangle end *****/
 
 ul.down-arrow {
 	z-index: 22;
 	background: #eee;
-	width: 144px;
+	width: 134px;
 	display: none;
 	padding: 2px 0 2px 0;
 	margin: 0px;
@@ -108,19 +91,19 @@ ul.down-arrow {
 	float: left;
 	list-style: none;
 	position: absolute;
-	border-color: transparent;
+	border-color: #111;
 	border-style: solid;
-	border-width: 0px;
+	border-width: 2px;
 	border-radius: 2px;
 	-webkit-transition: left 0.5s ease-out;
-	box-shadow: 0px 0px 20px black; 	
+	box-shadow: 0px 0px 10px black; 	
 }
 
 ul.down-arrow li {
 	background: transparent;
 	padding: 0 2px 0 2px;
-	width: 140px;
-	height: 26px;
+	width: 130px;
+	height: 24px;
 	line-height: 0;
 	border-color: transparent;
 	border-style: solid;
@@ -138,12 +121,12 @@ ul.down-arrow a {
 	color: #1a1a1a;
 	/*background: rgba(0,0,0,0.7);*/
 	display: inline-block;
-	height: 26px;
-	width: 140px;
+	height: 24px;
+	width: 130px;
 	padding: 0px;
 	line-height: 26px;
 	text-decoration: none;
-	font-size: 14px;
+	font-size: 13px;
 	/*font-weight: bold;*/
 	text-align: center;
 	text-shadow: 0 1px 1px #EEE;
@@ -179,6 +162,7 @@ li.session-selected a {
 	border-width: 0px;
 	border-radius: 1px;
 	/*background: #1A1A1A;*/
+	font-size: 13px;
 	font-weight: bold;
 	color: #1a1a1a;
 }
@@ -206,7 +190,7 @@ div#center {
 div#users {
 	position: fixed;
 	/*top: 200px;*/
-	left: 0px;
+	left: -3px;
 	right: 0px;
 	height: 400px;
 	-webkit-box-reflect:below 1px -webkit-gradient(linear, left top, left bottom, from(rgba(240, 240, 240, 0.0)), color-stop(0.7, rgba(240, 240, 240, 0.1)), to(rgba(240, 240, 240, 0.2)));
@@ -226,7 +210,7 @@ div#users > div.user {
 	-webkit-transition-duration: 1s;
 	-webkit-transition-delay: 100ms;
 	cursor:pointer;
-	box-shadow: 0px 0px 20px black; 	
+	box-shadow: 0px 0px 10px black; 	
 }
 
 div.user.no-image {
@@ -262,6 +246,7 @@ div#users div.user-selected img.userimage {
 	width: 150px;
 	height: 150px;
 	border-radius: 7px;
+	box-shadow: 0px 0px 10px black; 
 }
 div#users div.userimgcont {
 	position: absolute;
@@ -285,6 +270,7 @@ div.user-selected div.userimgcont div.imgoverlay {
 	height: 150px;
 	overflow: hidden;
 }*/
+
 div.user > div.user-name-container {
 	position: absolute;
 	bottom: 0px;
@@ -328,15 +314,16 @@ div.user-selected > div.user-name-container.no-image {
 div.user > div.user-name-container > div {
 	vertical-align: middle;
 	padding: 4px;
+	margin-top: 45px;
 	font-size: 18px;
 	font-family: Droid Sans;
 	/*font-weight: bold;*/
-	color: #eee;
-	line-height: 100px;
+	color: #fff;
+	line-height: 20px;
 	white-space: nowrap !important;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	text-shadow: 1px 1px 1px #000;
+	text-shadow: 1px 1px 2px #000;
 	cursor: default;
 }
 
@@ -370,14 +357,14 @@ div.user > div.user-name-container > div {
 .input-c input{
 	background: #eee;
 	border-width: 2px;
-	border-radius: 4px;
+	border-radius: 5px;
 	border-color: #222;
 	border-style: solid;
 	height: 28px;
 	font-size: 14px;
 	color: #000;
 	text-align: center;
-	box-shadow: 0px 0px 10px black;
+	box-shadow: 0px 0px 5px black;
 }
 
 .input-c input:focus{
@@ -386,7 +373,7 @@ div.user > div.user-name-container > div {
 
 div#password-box {
 	position: absolute;
-	width: 200px;
+	width: 240px;
 	height: 40px;
 	top: 55%;
 	left: 50%;
@@ -407,7 +394,7 @@ div#password-box {
 	border-radius: 5px;
 	box-shadow: 0 0 5px rgba(0,0,0,0.3);
 	line-height: 20px;
-	box-shadow: 0px 0px 20px black; 	
+	box-shadow: 0px 0px 10px black; 	
 }
 .user-selected .logged-in {
 	display: none;

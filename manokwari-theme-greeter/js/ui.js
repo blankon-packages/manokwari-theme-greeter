@@ -1,13 +1,13 @@
 $(document).ready(buildUI);
 
 var ui_center = 0;
-var user_padding = 50;
+var user_padding = 30;
 var user_selected_width = 150;
 var user_selected_height = 150;
 var user_width = 85;
 var user_height = 85;
 var selected_user = 0;
-var user_top_displacement = 50;
+var user_top_displacement = 60;
 var user_image_size = 85;
 var user_selected_image_size = 150;
 var animation_time = 1000;
@@ -29,7 +29,7 @@ function buildUI() {
 	if(lightdm.can_restart)
 		shutdownmenu += '<li><a href="#" onclick="lightdm.restart()">Restart</a></li>';
 	if(lightdm.can_shutdown)
-		shutdownmenu += '<li><a href="#" onclock="lightdm.shutdown()">Shutdown</a></li>';
+		shutdownmenu += '<li><a href="#" onclick="lightdm.shutdown()">Shutdown</a></li>';
 	shutdownmenu += '<div class="down-arrow-bottom"></div>';
 	$('#shutdown-menu').html(shutdownmenu);
 	$('#shutdown-container').click(function() {
@@ -263,7 +263,7 @@ function centerit() {
 	var margin_top = ($(document).height() - 400) / 2;
 	$('#center').css('top', margin_top + 'px');
 	//center login bar horizontally
-	var login_left = ($(document).width() - 200) / 2;
+	var login_left = ($(document).width() - 250) / 2;
 	$('#password-box').css('left', login_left + 'px');
 	//$('#password-box').css('top', margin_top + 250 + 'px');
 }
