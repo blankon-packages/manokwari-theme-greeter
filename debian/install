@@ -1,2 +1,2 @@
 manokwari-theme-greeter /usr/share/lightdm-webkit/themes/
-avatar /home/$USER/.face
+.face $HOME/.face
