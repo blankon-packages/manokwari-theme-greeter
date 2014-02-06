@@ -4,11 +4,11 @@ Priority: optional
 Maintainer: BlankOn Developers <blankon-dev@googlegroups.com>
 XSBC-Original-Maintainer: Sergey "Shnatsel" Davidoff <shnatsel@gmail.com>
 Build-Depends: debhelper (>= 7.0.50~)
-Standards-Version: 3.8.4
+Standards-Version: 3.9.4
 
 Package: manokwari-theme-greeter
 Architecture: all
-Depends: ${misc:Depends}, lightdm-webkit-greeter
+Depends: ${misc:Depends}, blankon-avatar, lightdm-webkit-greeter
 Provides: lightdm-theme
 Description: BlankOn login screen
  Manokwari theme for LightDM, developed by BlankOn project.

@@ -1,3 +1,9 @@
+manokwari-theme-greeter (2.4) suroboyo; urgency=low
+
+  * Added depends blankon-avatar
+
+ -- Mahyuddin Ramli <yudi.al@gmail.com>  Thu, 06 Feb 2014 19:47:04 +0700
+
 manokwari-theme-greeter (2.3) suroboyo; urgency=low
 
   * Rebuild
