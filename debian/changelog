@@ -1,3 +1,9 @@
+manokwari-theme-greeter (2.5) tambora; urgency=low
+
+  * First upload to tambora
+
+ -- Syai Mif <syai.unipdu@gmail.com>  Thu, 06 Mar 2014 12:09:16 +0700
+
 manokwari-theme-greeter (2.4) suroboyo; urgency=low
 
   * Added depends blankon-avatar
