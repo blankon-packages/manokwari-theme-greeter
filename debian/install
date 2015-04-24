@@ -1,2 +1,2 @@
-manokwari-theme-greeter /usr/share/lightdm-webkit/themes/
+greeter/* /usr/share/lightdm-webkit/themes/manokwari-theme-greeter
 

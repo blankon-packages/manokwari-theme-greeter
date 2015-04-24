@@ -1,3 +1,9 @@
+manokwari-theme-greeter (2.6) tambora; urgency=low
+
+  * Rebuild face
+
+ -- Mijortsa <mijortsa@localhost>  Sat, 25 Apr 2015 00:35:32 +0700
+
 manokwari-theme-greeter (2.5) tambora; urgency=low
 
   * First upload to tambora
