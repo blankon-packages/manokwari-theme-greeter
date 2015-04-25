@@ -1,3 +1,9 @@
+manokwari-theme-greeter (2.8) tambora; urgency=medium
+
+  * Upstream release
+
+ -- Mijortsa <azis.astrojim@surabaya.di.blankon.in>  Sat, 25 Apr 2015 13:52:07 +0700
+
 manokwari-theme-greeter (2.7) tambora; urgency=low
 
   * background-size:cover
