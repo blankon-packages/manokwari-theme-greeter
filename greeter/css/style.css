@@ -1,7 +1,15 @@
-body {
-	background: #222 url(../img/bg.png);
+body,.stretch {
+	background: #222 url(../img/bg.png) no-repeat center center fixed;
     color: #777;
-	/*text-shadow: 0 0 1px #fff;*/
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+	-webkit-user-select: none;
+	-webkit-touch-callout: none;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
     font-family: UbuntuRegular;
 }
 .depan{

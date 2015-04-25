@@ -1,3 +1,9 @@
+manokwari-theme-greeter (2.7) tambora; urgency=low
+
+  * background-size:cover
+
+ -- Mijortsa <azis.astrojim@surabaya.di.blankon.in>  Sat, 25 Apr 2015 13:35:29 +0700
+
 manokwari-theme-greeter (2.6) tambora; urgency=low
 
   * Rebuild face
