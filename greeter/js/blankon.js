@@ -106,7 +106,7 @@ function buildUI() {
 		switch_user($('#user-'+lightdm.timed_login_user+' .user-id-value').html());
 	} 
 	else {
-		switch_user(selected_user);
+		switch_user($(".user-selected").removeClass("user-selected"));
 	}
 
 	function password_submit() {

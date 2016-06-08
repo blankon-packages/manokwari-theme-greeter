@@ -1,3 +1,9 @@
+manokwari-theme-greeter (2.9) tambora; urgency=low
+
+  * Modified greeter/js/blankon.js line 109
+
+ -- Mijortsa <syaimif@localhost>  Wed, 08 Jun 2016 12:09:31 +0700
+
 manokwari-theme-greeter (2.8) tambora; urgency=medium
 
   * Upstream release
