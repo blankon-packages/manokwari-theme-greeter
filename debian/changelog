@@ -1,3 +1,9 @@
+manokwari-theme-greeter (3.0) tambora; urgency=medium
+
+  * Remove avatar from style 
+
+ -- dotovr <dotovr@preko>  Sat, 18 Jun 2016 20:10:37 +0700
+
 manokwari-theme-greeter (2.9) tambora; urgency=low
 
   * Modified greeter/js/blankon.js line 109
