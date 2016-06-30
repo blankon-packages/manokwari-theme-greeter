@@ -1,0 +1,6 @@
+[theme]
+name=blankon-session
+description=BlankOn logon
+engine=lightdm-webkit-greeter
+url=index.html
+session=gnome-session-blankon

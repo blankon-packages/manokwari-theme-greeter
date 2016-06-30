@@ -1,0 +1,198 @@
+* {
+  font: normal 100% Cantarell;
+}
+
+body {
+  background: url('bg.png');
+  display: table;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  color: #EFEFEF;
+
+  font-size: 10pt;/*
+  text-shadow: 1px 1px 3px black;*/
+}
+
+body, span, div, img {
+  -webkit-user-select: none;
+}
+
+input {
+  border: 1px solid white;
+  border-radius: 4px;
+  padding: 4px;
+  box-shadow: 0 0 1px 1px #FFF;
+
+  -webkit-transition: box-shadow 0.3s ease-in-out;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 0 1px 1px #FFF;
+  -webkit-transition: box-shadow 0.3s ease-in-out;
+}
+
+a {
+  text-decoration: none;
+}
+
+.smooth {
+  -webkit-transition: visibility 0s, opacity 0.3s, left 0.4s;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition-delay: 0.3s, 0s, 0s;
+}
+
+.center {
+  text-align: center;
+}
+
+.button {
+  cursor: pointer;
+}
+
+.header {
+  height: 55px;/*
+  box-shadow: 0 0 1px 1px #222;*/
+}
+
+.blankonlogo {
+  float: left !important;
+  margin: 10px !important;
+  padding: 0 !important;
+  height: 41px !important;
+  width: 191px !important;
+  background: url('OIX.png') no-repeat;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  text-align: center;
+}
+
+.footer, .header {
+  width: 100%;
+}
+
+.time {
+  float: right;
+  line-height: 25px;
+  font-size: 16pt;
+  margin-right: 10px;
+  margin-top: 12px;
+}
+
+.login_content {
+  display: table-row;
+}
+
+.login_container {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#message {
+  display: table-row;
+  height: 80px;
+  -webkit-transition: visibility 0s, opacity 0.3s, height 0.3s;
+}
+
+#message.hidden {
+  height: 0px;
+}
+
+#message_content {
+  display: table-cell;
+  vertical-align: top;
+  text-align: center;
+}
+
+#message_content.error {
+  color: #F55;
+}
+
+.user {
+  display: inline-block;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.user:active {
+  opacity: 0.5;
+}
+
+.user_image_wrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 80px;
+  box-shadow: 0 0 1px 1px #FFF;
+  -webkit-transition: all 0.3s ease-in-out;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.user_image_wrapper:hover {
+  box-shadow:  0 0 5px 5px #FFF;
+  -webkit-transition: all 0.2s ease-in-out;
+}
+
+.user_image {
+  width: 80px;
+  height: 80px;
+  border-radius: 60px;
+}
+
+.user_name {
+  display: block;
+  margin-top: 15px;
+}
+
+.action {
+  display: inline-block;
+  width: 80px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.action_image {
+  height: 50px;
+  width: 50px;
+
+  margin-bottom: 5px;
+}
+
+.action_image:hover {
+  height: 53px;
+  width: 53px;
+}
+
+.action_image:active {
+  height: 50px;
+  width: 50px;
+}
+
+.action_image_wrapper {
+  height: 53px;
+  width: 53px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.action_label {
+  height: 53px;
+  width: 53px;
+  color: #FFF;
+}
+
+#session_container {
+	margin-top: 25px;
+}

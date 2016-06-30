@@ -1,3 +1,9 @@
+manokwari-theme-greeter (3.1) tambora; urgency=medium
+
+  * New upstream release
+
+ -- Syai Mif <syaimif@di.blankon.in>  Thu, 30 Jun 2016 08:35:02 +0700
+
 manokwari-theme-greeter (3.0) tambora; urgency=medium
 
   * Remove avatar from style 
