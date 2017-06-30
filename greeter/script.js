@@ -56,22 +56,35 @@ function show_error(text) {
 
 // called when the greeter is finished the authentication request
 function authentication_complete() {
-  var container = document.querySelector("#session_container");
-  var children = container.querySelectorAll("input");
+  var s_container = document.querySelector("#session_container"); // session container
+  var s_children = s_container.querySelectorAll("input");
+  var l_container = document.querySelector("#language_container"); // language container
+  var l_children = l_container.querySelectorAll("input");
   var i = 0;
+  var j = 0;
   var key = "";
-  for (i = 0; i < children.length; i++) {
-    var child = children[i];
-    if (child.checked) {
-      key = child.value;
+  var lang = "";
+  for (i = 0; i < s_children.length; i++) {
+    var s_child = s_children[i];
+    if (s_child.checked) {
+      key = s_child.value;
       break;
     }
   }
-
+  for (j = 0; j < l_children.length; j++){
+  	var l_child = l_children[j];
+  	if(l_child.checked){
+  		lang = l_child.value;
+  		break;
+  	}
+  }
+	  console.log("language selected:",lang);
   if (lightdm.is_authenticated) {
     if (key === "") {
+    	lightdm.set_language(lightdm.default_language);
       lightdm.login(lightdm.authentication_user, lightdm.default_session);
-    } else {
+    }else {
+    	lightdm.set_language(lang);
       lightdm.login(lightdm.authentication_user, key);
     }
   } else {
@@ -111,7 +124,6 @@ function initialize_sessions() {
     var session = lightdm.sessions[i];
     var s = template.cloneNode(true);
     s.id = "session_" + session.key;
-
     var label = s.querySelector(".session_label");
     var radio = s.querySelector("input");
 
@@ -189,6 +201,7 @@ function update_time() {
 
 function initialize() {
   show_message("");
+  initialize_languages();
   initialize_users();
   initialize_timer();
   initialize_sessions();
@@ -196,6 +209,33 @@ function initialize() {
 
 function on_image_error(e) {
   e.currentTarget.src = "img/avatar.svg";
+}
+
+function initialize_languages() {
+	var template = document.querySelector("#language_template");
+	var parent = language_template.parentElement;
+	var i = 0;
+	parent.removeChild(template);
+	
+	for (i = 0; i < lightdm.languages.length; i = i + 1){
+		var language = lightdm.languages[i];
+    var l = template.cloneNode(true);
+    l.id = language.code;
+
+    var label = l.querySelector(".language_label");
+    var radio = l.querySelector("input");
+
+    console.log(l, language);
+    label.innerHTML = language.name;
+    radio.value = language.code;
+    
+    var default_language = 'default' == lightdm.default_language && 0 == i;
+    if (language.code === lightdm.default_language || default_language) {
+      radio.checked = true;
+    }
+    
+   	parent.appendChild(l);
+	}
 }
 
 function initialize_users() {
