@@ -196,3 +196,11 @@ a {
 #session_container {
 	margin-top: 25px;
 }
+
+.language {
+  float: right;
+  margin-right: 20px;
+  margin-top: 12px;
+  font-size: 16pt;
+  line-height: 25px;
+}
