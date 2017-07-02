@@ -78,13 +78,19 @@ function authentication_complete() {
   		break;
   	}
   }
-	  console.log("language selected:",lang);
+  console.log("language selected: "+lang);
   if (lightdm.is_authenticated) {
-    if (key === "") {
-    	lightdm.set_language(lightdm.default_language);
+    if (key === "" && lang === "") {
+      lightdm.set_language(lightdm.default_language);
+      lightdm.login(lightdm.authentication_user, lightdm.default_session);
+    }else if (key !== "" && lang === "") {
+      lightdm.set_language(lightdm.default_language);
+      lightdm.login(lightdm.authentication_user, key);
+    }else if (key === "" && lang !== "") {
+      lightdm.set_language(lang);
       lightdm.login(lightdm.authentication_user, lightdm.default_session);
     }else {
-    	lightdm.set_language(lang);
+      lightdm.set_language(lang);
       lightdm.login(lightdm.authentication_user, key);
     }
   } else {
@@ -127,7 +133,7 @@ function initialize_sessions() {
     var label = s.querySelector(".session_label");
     var radio = s.querySelector("input");
 
-    console.log(s, session);
+    console.log(s,session);
     label.innerHTML = session.name;
     radio.value = session.key;
 
@@ -229,8 +235,8 @@ function initialize_languages() {
     label.innerHTML = language.name;
     radio.value = language.code;
     
-    var default_language = 'default' == lightdm.default_language && 0 == i;
-    if (language.code === lightdm.default_language || default_language) {
+    var default_language = 'Indonesian' == lightdm.language && 0 == i;
+    if (language.name === lightdm.default_language || default_language) {
       radio.checked = true;
     }
     
