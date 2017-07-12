@@ -1,6 +1,8 @@
 var time_remaining = 0;
 var selected_user = null;
 var valid_image = /.*\.(png|svg|jpg|jpeg|bmp)$/i;
+var language_code = lightdm.default_language;
+var eventCounts = 0;
 
 ///////////////////////////////////////////////
 // CALLBACK API. Called by the webkit greeeter
@@ -58,12 +60,8 @@ function show_error(text) {
 function authentication_complete() {
   var s_container = document.querySelector("#session_container"); // session container
   var s_children = s_container.querySelectorAll("input");
-  var l_container = document.querySelector("#language_container"); // language container
-  var l_children = l_container.querySelectorAll("input");
   var i = 0;
-  var j = 0;
   var key = "";
-  var lang = "";
   for (i = 0; i < s_children.length; i++) {
     var s_child = s_children[i];
     if (s_child.checked) {
@@ -71,26 +69,12 @@ function authentication_complete() {
       break;
     }
   }
-  for (j = 0; j < l_children.length; j++){
-  	var l_child = l_children[j];
-  	if(l_child.checked){
-  		lang = l_child.value;
-  		break;
-  	}
-  }
-  console.log("language selected: "+lang);
   if (lightdm.is_authenticated) {
-    if (key === "" && lang === "") {
-      lightdm.set_language(lightdm.default_language);
-      lightdm.login(lightdm.authentication_user, lightdm.default_session);
-    }else if (key !== "" && lang === "") {
-      lightdm.set_language(lightdm.default_language);
-      lightdm.login(lightdm.authentication_user, key);
-    }else if (key === "" && lang !== "") {
-      lightdm.set_language(lang);
+    if (key === "") {
+      lightdm.set_language(language_code);
       lightdm.login(lightdm.authentication_user, lightdm.default_session);
     }else {
-      lightdm.set_language(lang);
+      lightdm.set_language(language_code);
       lightdm.login(lightdm.authentication_user, key);
     }
   } else {
@@ -207,10 +191,11 @@ function update_time() {
 
 function initialize() {
   show_message("");
-  initialize_languages();
   initialize_users();
   initialize_timer();
   initialize_sessions();
+  initialize_languages();
+  getCurrentLanguage();
 }
 
 function on_image_error(e) {
@@ -232,10 +217,10 @@ function initialize_languages() {
     var radio = l.querySelector("input");
 
     console.log(l, language);
-    label.innerHTML = language.name;
+    label.innerHTML = language.name +" ("+l.id +")";
     radio.value = language.code;
     
-    var default_language = 'Indonesian' == lightdm.language && 0 == i;
+    var default_language = 'Indonesian' == lightdm.default_language && 0 == i;
     if (language.name === lightdm.default_language || default_language) {
       radio.checked = true;
     }
@@ -274,6 +259,26 @@ function initialize_users() {
 function initialize_timer() {
   update_time();
   setInterval(update_time, 1000);
+}
+
+function languageFunction() {
+	document.getElementById("languagelist").classList.toggle("show");
+	getCurrentLanguage();
+}
+
+function getCurrentLanguage(){
+	var l_container = document.querySelector("#languagelist"); // language container
+  var l_children = l_container.querySelectorAll("input");
+  for (i = 0; i < l_children.length; i++){
+  	var l_child = l_children[i];
+  	if(l_child.checked){
+  		language_code = l_child.value;
+  		break;
+  	}
+  }
+  var header = document.querySelector("#language-header");
+  header.innerHTML = language_code;
+  console.log("after get: "+language_code);
 }
 
 function add_action(id, name, image, clickhandler, template, parent) {
