@@ -2,7 +2,7 @@ var time_remaining = 0;
 var selected_user = null;
 var valid_image = /.*\.(png|svg|jpg|jpeg|bmp)$/i;
 var language_code = lightdm.default_language;
-var eventCounts = 0;
+
 
 ///////////////////////////////////////////////
 // CALLBACK API. Called by the webkit greeeter
@@ -203,19 +203,19 @@ function on_image_error(e) {
 }
 
 function initialize_languages() {
-	var template = document.querySelector("#language_template");
-	var parent = language_template.parentElement;
-	var i = 0;
-	parent.removeChild(template);
-	
-	for (i = 0; i < lightdm.languages.length; i = i + 1){
-		var language = lightdm.languages[i];
+  var template = document.querySelector("#language_template");
+  var parent = language_template.parentElement;
+  var i = 0;
+  parent.removeChild(template);
+  
+  for (i = 0; i < lightdm.languages.length; i = i + 1){
+    var language = lightdm.languages[i];
     var l = template.cloneNode(true);
     l.id = language.code;
-
+    
     var label = l.querySelector(".language_label");
     var radio = l.querySelector("input");
-
+    
     console.log(l, language);
     label.innerHTML = language.name +" ("+l.id +")";
     radio.value = language.code;
@@ -225,8 +225,8 @@ function initialize_languages() {
       radio.checked = true;
     }
     
-   	parent.appendChild(l);
-	}
+    parent.appendChild(l);
+  }
 }
 
 function initialize_users() {
@@ -262,19 +262,19 @@ function initialize_timer() {
 }
 
 function languageFunction() {
-	document.getElementById("languagelist").classList.toggle("show");
-	getCurrentLanguage();
+  document.getElementById("languagelist").classList.toggle("show");
+  getCurrentLanguage();
 }
 
 function getCurrentLanguage(){
-	var l_container = document.querySelector("#languagelist"); // language container
+  var l_container = document.querySelector("#languagelist"); // language container
   var l_children = l_container.querySelectorAll("input");
   for (i = 0; i < l_children.length; i++){
-  	var l_child = l_children[i];
-  	if(l_child.checked){
-  		language_code = l_child.value;
-  		break;
-  	}
+    var l_child = l_children[i];
+    if(l_child.checked){
+      language_code = l_child.value;
+      break;
+    }
   }
   var header = document.querySelector("#language-header");
   header.innerHTML = language_code;
