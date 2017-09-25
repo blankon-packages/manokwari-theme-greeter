@@ -55,24 +55,17 @@ function show_message(text) {
 
 // called when the greeter asks to show an error
 function show_error(text) {
+  var message = $("#message_content");
+  message.addClass("error");
   show_message(text);
-  var message = document.querySelector("#message_content");
-  message.classList.add("error");
 }
 
 // called when the greeter is finished the authentication request
 function authentication_complete() {
-  var container = document.querySelector("#session_container");
-  var children = container.querySelectorAll("input");
+  var container = $("#session_container");
+  var children = container.find("select");
   var i = 0;
-  var key = "";
-  for (i = 0; i < children.length; i++) {
-    var child = children[i];
-    if (child.checked) {
-      key = child.value;
-      break;
-    }
-  }
+  var key = children.val();
 
   if (lightdm.is_authenticated) {
     if (key === "") {
@@ -119,11 +112,9 @@ function initialize_sessions() {
       .text(session.name)
       .val(session.key);
 
-    console.log(s);
-
     var default_session = 'default' == lightdm.default_session && 0 == i;
     if (session.key === lightdm.default_session || default_session) {
-      option.parent().val(session.key);
+      s.attr({"selected":"selected"});
     }
 
     container.append(s);
