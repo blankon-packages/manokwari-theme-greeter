@@ -37,14 +37,20 @@ function show_prompt(text) {
 
 // called when the greeter asks to show a message
 function show_message(text) {
-  var message = document.querySelector("#message_content");
-  message.innerHTML= text;
+  var message = $("#message");
+  var content = $("#message_content");
+
+  content.text(text);
+
   if (text) {
-    document.querySelector("#message").classList.remove("hidden");
+    message.removeClass("hidden");
   } else {
-    document.querySelector("#message").classList.add("hidden");
+    message.addClass("hidden");
   }
-  message.classList.remove("error");
+  content.removeClass("error");
+  setTimeout(function(){
+    message.addClass("hidden");
+  },4000);
 }
 
 // called when the greeter asks to show an error
@@ -102,30 +108,27 @@ function provide_secret() {
 }
 
 function initialize_sessions() {
-  var template = document.querySelector("#session_template");
-  var container = session_template.parentElement;
+  var template = $("#session_template");
+  var container = $("#session_container select");
   var i = 0;
-  container.removeChild(template);
 
   for (i = 0; i < lightdm.sessions.length; i = i + 1) {
     var session = lightdm.sessions[i];
-    var s = template.cloneNode(true);
-    s.id = "session_" + session.key;
+    var s = template.clone();
+    s.attr({"id":"session_" + session.key})
+      .text(session.name)
+      .val(session.key);
 
-    var label = s.querySelector(".session_label");
-    var radio = s.querySelector("input");
-
-    console.log(s, session);
-    label.innerHTML = session.name;
-    radio.value = session.key;
+    console.log(s);
 
     var default_session = 'default' == lightdm.default_session && 0 == i;
     if (session.key === lightdm.default_session || default_session) {
-      radio.checked = true;
+      option.parent().val(session.key);
     }
 
-    container.appendChild(s);
+    container.append(s);
   }
+  template.remove();
 }
 
 function show_users() {
