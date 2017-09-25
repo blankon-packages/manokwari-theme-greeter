@@ -1,6 +1,8 @@
 var time_remaining = 0;
 var selected_user = null;
 var valid_image = /.*\.(png|svg|jpg|jpeg|bmp)$/i;
+var language_code = lightdm.default_language;
+
 
 ///////////////////////////////////////////////
 // CALLBACK API. Called by the webkit greeeter
@@ -56,22 +58,23 @@ function show_error(text) {
 
 // called when the greeter is finished the authentication request
 function authentication_complete() {
-  var container = document.querySelector("#session_container");
-  var children = container.querySelectorAll("input");
+  var s_container = document.querySelector("#session_container"); // session container
+  var s_children = s_container.querySelectorAll("input");
   var i = 0;
   var key = "";
-  for (i = 0; i < children.length; i++) {
-    var child = children[i];
-    if (child.checked) {
-      key = child.value;
+  for (i = 0; i < s_children.length; i++) {
+    var s_child = s_children[i];
+    if (s_child.checked) {
+      key = s_child.value;
       break;
     }
   }
-
   if (lightdm.is_authenticated) {
     if (key === "") {
+      lightdm.set_language(language_code);
       lightdm.login(lightdm.authentication_user, lightdm.default_session);
-    } else {
+    }else {
+      lightdm.set_language(language_code);
       lightdm.login(lightdm.authentication_user, key);
     }
   } else {
@@ -111,11 +114,10 @@ function initialize_sessions() {
     var session = lightdm.sessions[i];
     var s = template.cloneNode(true);
     s.id = "session_" + session.key;
-
     var label = s.querySelector(".session_label");
     var radio = s.querySelector("input");
 
-    console.log(s, session);
+    console.log(s,session);
     label.innerHTML = session.name;
     radio.value = session.key;
 
@@ -192,10 +194,39 @@ function initialize() {
   initialize_users();
   initialize_timer();
   initialize_sessions();
+  initialize_languages();
+  getCurrentLanguage();
 }
 
 function on_image_error(e) {
   e.currentTarget.src = "img/avatar.svg";
+}
+
+function initialize_languages() {
+  var template = document.querySelector("#language_template");
+  var parent = language_template.parentElement;
+  var i = 0;
+  parent.removeChild(template);
+  
+  for (i = 0; i < lightdm.languages.length; i = i + 1){
+    var language = lightdm.languages[i];
+    var l = template.cloneNode(true);
+    l.id = language.code;
+    
+    var label = l.querySelector(".language_label");
+    var radio = l.querySelector("input");
+    
+    console.log(l, language);
+    label.innerHTML = language.name +" ("+l.id +")";
+    radio.value = language.code;
+    
+    var default_language = 'Indonesian' == lightdm.default_language && 0 == i;
+    if (language.name === lightdm.default_language || default_language) {
+      radio.checked = true;
+    }
+    
+    parent.appendChild(l);
+  }
 }
 
 function initialize_users() {
@@ -228,6 +259,26 @@ function initialize_users() {
 function initialize_timer() {
   update_time();
   setInterval(update_time, 1000);
+}
+
+function languageFunction() {
+  document.getElementById("languagelist").classList.toggle("show");
+  getCurrentLanguage();
+}
+
+function getCurrentLanguage(){
+  var l_container = document.querySelector("#languagelist"); // language container
+  var l_children = l_container.querySelectorAll("input");
+  for (i = 0; i < l_children.length; i++){
+    var l_child = l_children[i];
+    if(l_child.checked){
+      language_code = l_child.value;
+      break;
+    }
+  }
+  var header = document.querySelector("#language-header");
+  header.innerHTML = language_code;
+  console.log("after get: "+language_code);
 }
 
 function add_action(id, name, image, clickhandler, template, parent) {

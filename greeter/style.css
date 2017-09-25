@@ -194,5 +194,33 @@ a {
 }
 
 #session_container {
-	margin-top: 25px;
+  margin-top: 25px;
+}
+
+.language {
+  float: right;
+  margin-right: 20px;
+  margin-top: 8px;
+  font-size: 15pt;
+  line-height: 25px;
+  padding: 2px 10px 5px 10px;
+  border-radius: 15px;
+  position: static;
+}
+
+.language_container {
+  position: absolute;
+  display: none;
+  margin-top:5px;
+  margin-left:-100px;
+  max-height:120px;
+  min-width:245px;
+  overflow:auto;
+}
+
+.language:hover,.language:active {
+  background-color: rgba(0,0,0,0.4);
+}
+.show {
+  display:block;
 }

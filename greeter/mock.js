@@ -2,8 +2,8 @@
 if (typeof lightdm == 'undefined') {
 	lightdm= {};
 	lightdm.hostname="test-host";
-	lightdm.languages= [{code: "en_US", name: "English(US)", territory: "USA"}, {code: "en_UK", name: "English(UK)", territory: "UK"}];
-	lightdm.default_language= lightdm.languages[0];
+	lightdm.languages= [{code: "ar_SA", name: "Arabic", territory: "SaudiArabia"}, {code: "en_US", name: "English(US)", territory: "USA"}, {code: "en_UK", name: "English(UK)", territory: "UK"}, {code: "fr_FR", name: "French", territory: "France"}, {code: "id_ID", name: "Indonesian", territory: "Indonesia"}, {code: "it_IT", name: "Italian", territory: "Italy"}, {code: "ru_RU", name: "Russian", territory: "Russia"}, {code: "th_TH", name: "Thai", territory: "Thailand"}, {code: "zn_CN", name: "Chinese", territory: "China"}];
+	lightdm.default_language= lightdm.languages[0].code;
 	lightdm.layouts= [{name: "test", short_description: "test description", short_description:"really long epic description"}];
 	lightdm.default_layout= lightdm.layouts[0];
 	lightdm.layout= lightdm.layouts[0];
