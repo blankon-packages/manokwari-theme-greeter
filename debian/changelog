@@ -1,3 +1,9 @@
+manokwari-theme-greeter (3.5) uluwatu; urgency=medium
+
+  * fix error not show list DE
+
+ -- Aris Winardi <ariswinardy@gmail.com>  Mon, 25 Sep 2017 19:24:06 +0700
+
 manokwari-theme-greeter (3.4) uluwatu; urgency=medium
 
   * Theming for Uluwatu
