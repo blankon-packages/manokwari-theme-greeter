@@ -1,13 +1,9 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <!-- mock.js is only required for local testing -->
-    <script type="text/javascript" src="mock.js"></script>
-    <script type="text/javascript" src="script.js"></script>
   </head>
   <body onload="initialize()" oncontextmenu="return false;">
     <div class="header">
-      <div class="blankonlogo"></div>
       <span id="current_time" class="time"></span>
     </div>
     <div class="login_content">
@@ -24,11 +20,9 @@
           <form action="javascript: provide_secret()" class="password_prompt">
             <input id="password_entry" type="password" placeholder="Password" />
             <div id="session_container" class="smooth">
-              <div id="session_template">
-                <label>
-                  <input type="radio" name="session">&nbsp;<span class="session_label"></span></input>
-                </label>
-              </div>
+              <select name="session">
+                  <option value="a" id="session_template">a</option>
+              </select>
             </div>
           </form>
         </div>
@@ -38,18 +32,35 @@
       <div id="message_content"></div>
     </div>
     <div class="footer">
-      <div id="action_suspend" class="action button">
-        <div class="action_image_wrapper" onclick="lightdm.suspend();"><img class="action_image" src="img/sleep.svg"/></div>
-        <span class="action_label">Sleep</span>
-      </div>
-      <div id="action_restart" class="action button">
-        <div class="action_image_wrapper" onclick="lightdm.restart();"><img class="action_image" src="img/restart.svg"/></div>
-        <span class="action_label">Restart</span>
-      </div>
-      <div id="action_shutdown" class="action button">
-        <div class="action_image_wrapper" onclick="lightdm.shutdown();"><img class="action_image" src="img/shutdown.svg"/></div>
-        <span class="action_label">Shutdown</span>
-      </div>
+        <div class="blankonlogo">
+          <img src="img/blankon-logo.png">
+        </div>
+        <div class="actions">
+            <div id="action_suspend" class="action button">
+                <div class="action_image_wrapper" onclick="lightdm.suspend();">
+                  <img class="action_image" src="img/sleep.svg"/>
+                  <span class="action_label">Sleep</span>
+                </div>
+              </div>
+              <div id="action_restart" class="action button">
+                <div class="action_image_wrapper" onclick="lightdm.restart();">
+                  <img class="action_image" src="img/restart.svg"/>
+                  <span class="action_label">Restart</span>
+                </div>
+              </div>
+              <div id="action_shutdown" class="action button">
+                <div class="action_image_wrapper" onclick="lightdm.shutdown();">
+                  <img class="action_image" src="img/shutdown.svg"/>
+                  <span class="action_label">Shutdown</span>
+                </div>
+              </div>
+        </div>
     </div>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
+    <!-- mock.js is only required for local testing -->
+    <script type="text/javascript" src="js/mock.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
   </body>
 </html>

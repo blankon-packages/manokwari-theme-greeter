@@ -24,7 +24,8 @@ if (typeof lightdm == 'undefined') {
 	               ]
 
 	lightdm.sessions= [
-					{ name: "LXQt Desktop", key: "lxqt" },
+					{ name: "Manokwari", key: "manokwari" },
+					{ name: "GNOME", key: "gnome" },
 					{ name: "KDE Plasma Desktop", key: "kdeplasma" },
 					]
 	lightdm.default_session=lightdm.sessions[0];
